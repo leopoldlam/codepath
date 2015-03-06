@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Tips Calculator
 //
-//  Created by Tien Phan on 2/19/15.
+//  Created by Leo Lam on 2/19/15.
 //  Copyright (c) 2015 KML. All rights reserved.
 //
 
