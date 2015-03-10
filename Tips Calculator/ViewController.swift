@@ -54,6 +54,25 @@ class ViewController: UIViewController {
         tipControl.setTitle(String(format:"%.0f%%", temp), forSegmentAtIndex:1)
         temp = defaultPercentages[2] * 100
         tipControl.setTitle(String(format:"%.0f%%", temp), forSegmentAtIndex:2)
+        
+        
+        var _defaultSelection: AnyObject?  = defaults.objectForKey("defaultSelection")
+        
+        var defaultSelection = 0;
+        if (_defaultSelection != nil) {
+            if (_defaultSelection as NSInteger) < 3 {
+                defaultSelection = _defaultSelection as NSInteger
+                tipControl.selectedSegmentIndex = defaultSelection
+            }
+            
+            println("Selection is "+String(format:"%d", defaultSelection))
+        }
+        defaults.setObject(tipControl.selectedSegmentIndex, forKey: "defaultSelection")
+        
+
+        
+        
+        
         println("view will appear")
         
         defaults.synchronize()

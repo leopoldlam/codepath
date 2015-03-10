@@ -43,11 +43,24 @@ class SettingViewController: UIViewController {
             }
             
         }
-       
+        
+        let defaultSelection = defaults.objectForKey("defaultSelection") as NSInteger
+        tipControl.selectedSegmentIndex = defaultSelection
+        let tipIndex = tipControl.selectedSegmentIndex
+        let _tipTitle : String = tipControl.titleForSegmentAtIndex(tipIndex)!
+        let tipTitle = _tipTitle.substringToIndex(_tipTitle.endIndex.predecessor())
+        
+        tipOnefield.text = tipTitle;
+        
+
+   
         
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func OnTipTouchDownRepeat(sender: AnyObject) {
+        println("touchdown")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,7 +73,8 @@ class SettingViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
- 
+        tipOnefield.selectAll(nil)
+        tipOnefield.becomeFirstResponder()
         println("setting view did appear")
     }
     
@@ -80,9 +94,14 @@ class SettingViewController: UIViewController {
             {
                 let _tipTitle : String = tipControl.titleForSegmentAtIndex(count)!
                 let tipTitle = _tipTitle.substringToIndex(_tipTitle.endIndex.predecessor())
+                
+                if tipTitle.isEmpty{
+                    defaultPercentages.append(object as Double)
+                }
+                else{
 
-                defaultPercentages.append(tipTitle._bridgeToObjectiveC().doubleValue / 100)
-              
+                    defaultPercentages.append(tipTitle._bridgeToObjectiveC().doubleValue / 100)
+                }
                 count++
             }
             defaults.setObject(defaultPercentages, forKey: "defaultPercentages")
@@ -90,6 +109,10 @@ class SettingViewController: UIViewController {
             defaults.synchronize()
             
         }
+        
+        defaults.setObject(tipControl.selectedSegmentIndex, forKey: "defaultSelection")
+ 
+        println( String(tipControl.selectedSegmentIndex))
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -101,9 +124,7 @@ class SettingViewController: UIViewController {
     }
 
     @IBAction func OnDefaultChanged(sender: AnyObject) {
-        if (tipOnefield.text.isEmpty){
-            return
-        }
+
         let tipIndex = tipControl.selectedSegmentIndex
         tipControl.setTitle(tipOnefield.text + "%", forSegmentAtIndex: tipIndex)
         
@@ -118,10 +139,9 @@ class SettingViewController: UIViewController {
         let _tipTitle : String = tipControl.titleForSegmentAtIndex(tipIndex)!
         let tipTitle = _tipTitle.substringToIndex(_tipTitle.endIndex.predecessor())
 
-        
-        
-                  tipOnefield.text = tipTitle;
+        tipOnefield.text = tipTitle;
         tipOnefield.selectAll(nil)
+        tipOnefield.becomeFirstResponder()
    }
     /*
     // MARK: - Navigation
