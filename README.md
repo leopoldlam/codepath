@@ -1,9 +1,6 @@
 # swift-project
 # TipCalculator
 
-<<<<<<< HEAD
-See the swift-project branch
-=======
 This is a Tip Calculator application for iOS submitted as the [pre-assignment](https://gist.github.com/timothy1ee/7747214) requirement for CodePath.
 
 Time spent: 16 hours
@@ -19,4 +16,3 @@ Completed:
 
 
 ![Video Walkthrough](https://github.com/leopoldlam/swift-project/blob/swift-project/Tips%20Calculator/TipsCalculatorDemo.gif)
->>>>>>> swift-project
