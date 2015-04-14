@@ -13,6 +13,7 @@
 		0B24172A1A966D3F00C3FB1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B2417291A966D3F00C3FB1A /* Images.xcassets */; };
 		0B24172D1A966D3F00C3FB1A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B24172B1A966D3F00C3FB1A /* LaunchScreen.xib */; };
 		0B2417391A966D4000C3FB1A /* Tips_CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2417381A966D4000C3FB1A /* Tips_CalculatorTests.swift */; };
+		0B4B950C1ADD06370034C516 /* TipsCalculatorDemo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0B4B950B1ADD06370034C516 /* TipsCalculatorDemo.gif */; };
 		2EC487FD1A9D03D5006D94FF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC487FC1A9D03D5006D94FF /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		0B2417321A966D4000C3FB1A /* Tips CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tips CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2417371A966D4000C3FB1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B2417381A966D4000C3FB1A /* Tips_CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tips_CalculatorTests.swift; sourceTree = "<group>"; };
+		0B4B950B1ADD06370034C516 /* TipsCalculatorDemo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = TipsCalculatorDemo.gif; sourceTree = "<group>"; };
 		2EC487FC1A9D03D5006D94FF /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 		0B2417201A966D3F00C3FB1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0B4B950B1ADD06370034C516 /* TipsCalculatorDemo.gif */,
 				0B2417211A966D3F00C3FB1A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B2417281A966D3F00C3FB1A /* Main.storyboard in Resources */,
+				0B4B950C1ADD06370034C516 /* TipsCalculatorDemo.gif in Resources */,
 				0B24172D1A966D3F00C3FB1A /* LaunchScreen.xib in Resources */,
 				0B24172A1A966D3F00C3FB1A /* Images.xcassets in Resources */,
 			);

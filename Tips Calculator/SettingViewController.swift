@@ -13,6 +13,22 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     @IBOutlet weak var tipOnefield: UITextField!
     @IBOutlet weak var tipControl: UISegmentedControl!
+	@IBOutlet weak var themeSwitch: UISwitch!
+	@IBAction func onSwitchClicked(sender: UISwitch) {
+		
+		println(themeSwitch.on)
+		
+		
+		if (themeSwitch.on)
+		{
+			self.view.backgroundColor = UIColor.lightGrayColor()
+		}
+		else
+		{
+			self.view.backgroundColor = UIColor.whiteColor()
+		}
+		
+	}
     override func viewDidLoad() {
         super.viewDidLoad()
   
@@ -20,9 +36,18 @@ class SettingViewController: UIViewController {
         println("setting view did load")
         var defaults = NSUserDefaults.standardUserDefaults()
         
-        
-        
-        
+        var isDarkTheme = defaults.boolForKey("isDarkTheme")
+		themeSwitch.setOn(isDarkTheme, animated:true)
+
+		if (isDarkTheme)
+		{
+			self.view.backgroundColor = UIColor.lightGrayColor()
+		}
+		else
+		{
+			self.view.backgroundColor = UIColor.whiteColor()
+		}
+			
         if let tempDefaultPercentages = defaults.arrayForKey("defaultPercentages")
         {
             var count = 0;
@@ -82,6 +107,10 @@ class SettingViewController: UIViewController {
         super.viewWillDisappear(animated)
         println("setting view will disappear")
         var defaults = NSUserDefaults.standardUserDefaults()
+		
+		defaults.setBool(themeSwitch.on, forKey: "isDarkTheme")
+		
+		
         var defaultPercentages = [Double]()
         
 
